@@ -40,4 +40,9 @@ gulp.task('es6', () => {
     .pipe(gulp.dest(dest + '/js'));
 });
 
-gulp.task('default', ['pug', 'stylus', 'es6']);
+gulp.task('static', () => {
+  return gulp.src('static/**/*')
+    .pipe(gulp.dest(dest));
+});
+
+gulp.task('default', ['pug', 'stylus', 'es6', 'static']);

@@ -12,6 +12,7 @@ The build process is automated using [Gulp](http://gulpjs.com/). The included `g
 - `pug` compiles `pug/index.pug` and its dependencies to `build/index.html`.
 - `stylus` compiles `stylus/main.styl` and its dependencies to `build/css/main.css`.
 - `es6` transpiles `es6/main.js` and its dependencies using [Babel](http://babeljs.io/) ('es2015' preset) and bundles with [Browserify](http://browserify.org/), outputting to `build/js/main.js`.
+- `static` copies static resources to `build`.
 - `default` performs all of the above tasks.
 
 The `NODE_ENV` environment variable is used to control debugging features. When its value is `production`, no sourcemaps are included and the output is minified where possible.
