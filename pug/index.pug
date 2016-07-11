@@ -1,0 +1,57 @@
+doctype html
+
+- let pageNo = 0;
+
+mixin page()
+  div(id=`page${pageNo}`)&attributes(attributes).page
+    block
+  - pageNo++;
+
+mixin contentPage(heading, pic, color)
+  +page.content-page(data-bg-color=color)
+    section
+      h1= heading
+      .indent
+        block
+        +janpic(pic)
+    +nextPageLink(pageNo + 1)
+
+mixin janpic(pic)
+  +img(`/res/img/jan/${pic}.png`, `Jan looking ${pic}`)
+    
+mixin nextPageLink(targetPageNo)
+  a(href=`#page${targetPageNo}`, data-scroll).link.next-page-link
+    +img('/res/img/down.svg', 'Scroll to next page')
+      
+mixin img(src, description)
+  img(src=src, title=description, alt=description)&attributes(attributes)
+
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Download More Jan
+    link(rel="stylesheet", href="/main.css")
+    script(src="/js/main.js")
+  body
+    +page.header-page
+      header
+        +img('/res/img/jan.svg', 'Our Lord and Saviour, Janus+z')#janLogo
+        h1 Simple. Powerful. Polish.
+        a(href="/dl/jan.exe", download)
+          button(type="button").serif#downloadButton
+            span.serif Download More Jan
+        p In partnership with #[a(href="https://gfycat.com/RecentRichEasternnewt") Bright By Night].
+      +nextPageLink(1)
+    +contentPage('You need more Jan.', 'smiley', 'deep-purple')
+      p You can never have too much Jan. That's why it's free, and always will be.
+    +contentPage('Never be without Jan.', 'scary', 'blue')
+      p Running out of Jan is a scary prospect. Download more Jan now and never worry again.
+    +contentPage('Stand out from the crowd.', 'swaggy', 'teal')
+      p There is no match for fully authentic Jan, direct from the source. Never compromise with Jan.
+    +page.final-page
+      a(href="#", data-scroll).link 
+        +img('/res/img/top.svg', 'Scroll to top')
+      section
+        h1 Fin.
+        p Created by #[a(href="http://conelton.xyz/") Jack]. Inspired by #[a(href="http://getrekt.downloadmorejan.xyz/") Jan].
+      footer Compatibility issues? Tough shit, get a decent browser. &copy; Jack Conway.

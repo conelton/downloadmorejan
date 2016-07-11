@@ -1,0 +1,141 @@
+// Google material color palette
+$c-main = #388E3C // Green 700
+$c-pale = { // 100
+  purple: #E1BEE7,
+  deep-purple: #D1C4E9,
+  indigo: #C5CAE9,
+  blue: #BBDEFB,
+  light-blue: #B3E5FC,
+  cyan: #B2EBF2,
+  teal: #B2DFDB,
+}
+$c-dark = { // 900
+  purple: #4A148C,
+  deep-purple: #311B92,
+  indigo: #1A237E,
+  blue: #0D47A1,
+  light-blue: #01579B,
+  cyan: #006064,
+  teal: #004D40,
+}
+
+$c-pages = $c-pale
+for $color-name in $c-pages
+  .content-page[data-bg-color={$color-name}]
+    background-color: $c-pages[$color-name];
+
+flex-tower()
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  
+flex-float(proportion)
+  flex: 1;
+  display: flex;
+  
+  &::before
+    content: '';
+    flex: proportion;
+  
+  &::after
+    content: '';
+    flex: 1 - proportion;
+
+.serif
+  font-family: 'Bitter', serif;
+  
+.sans-serif
+  font-family: 'Open Sans', sans-serif;
+  
+.link
+  text-decoration: underline;
+  cursor: pointer;
+  
+.indent
+  max-width: 800px;
+  margin: auto 2vw;
+
+.page
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 1vh 1vw;
+  // background-image: radial-gradient(transparent, alpha(white, 0.3));
+  
+.content-page
+  flex-tower();
+  color: black;
+  
+  & > section
+    flex: 1;
+    align-self: stretch;
+    margin: 10vh 20vw;
+    
+.janpic
+  height: 25vmax;
+  margin-top: 2vmax;
+  
+a:link
+a:visited
+  color: inherit;
+  @extend .link;
+  
+h1
+  margin: 0;
+  font-size: 4vmax;
+  font-weight: normal;
+  @extend .serif;
+  
+body
+  margin: 0;
+  padding: 0;
+  font-size: 120%;
+  @extend .sans-serif;
+  
+.header-page
+  flex-tower();
+  background-color: $c-main;
+  color: white;
+  
+  header
+    flex-tower();
+    flex-float(0.3);
+    align-items: center;
+    
+    &::before
+      content: '';
+      flex: 0.3;
+    
+    &::after
+      content: '';
+      flex: 0.7;
+      
+    > *
+      margin: 0 0 2vmax 0;
+    
+    #janLogo
+      width: 10vmax;
+      
+    #downloadButton
+      padding: 0.75vmax 1.5vmax;
+      border: none;
+      border-radius: 3px;
+      font-size: 150%;
+      background-color: white;
+      color: $c-main;
+      box-shadow: 2px 2px 0px alpha(black, 0.4);
+      
+      &:active
+        transform: translate(1px, 1px);
+        box-shadow: 1px 1px 0px alpha(black, 0.4);
+        
+.final-page
+  flex-tower();
+  background-color: grayscale($c-main);
+  color: white;
+  
+  section
+    flex-tower();
+    flex-float(0.3);
+    
+  footer
+    font-size: 80%;
