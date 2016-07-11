@@ -1,11 +1,11 @@
 'use strict';
 
-import scroll from 'scroll';
+import smoothScroll from './smooth-scroll';
 
 const qsa = s => Array.from(document.querySelectorAll(s));
 
 function scrollTo(y) {
-  scroll.top(document, y, { duration: 500 });
+  smoothScroll(y, 500);
 }
 
 function scrollToId(id) {
@@ -14,13 +14,16 @@ function scrollToId(id) {
 }
 
 document.addEventListener('DOMContentLoaded', event => {
-  qsa('[data-scroll]').addEventListener('click', event => {
-    let href = event.currentTarget.getAttribute('href').trim();
-    if (href.charAt(0) === '#') {
-      if (href === '#')
-        scrollTo(0);
-      else
-        scrollToId(href.slice(1));
-    }
+  qsa('[data-scroll]').forEach(element => {
+    element.addEventListener('click', event => {
+      let href = element.getAttribute('href').trim();
+      if (href.charAt(0) === '#') {
+        if (href === '#')
+          scrollTo(0);
+        else
+          scrollToId(href.slice(1));
+      }
+      event.preventDefault();
+    });
   });
 });
