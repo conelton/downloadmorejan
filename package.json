@@ -2,6 +2,9 @@
   "name": "downloadmorejan",
   "version": "1.0.0",
   "description": "Source code for Download More Jan website (http://downloadmorejan.xyz/)",
+  "scripts": {
+    "build": "gulp"
+  },
   "dependencies": {},
   "devDependencies": {
     "babel-preset-es2015": "^6.9.0",
