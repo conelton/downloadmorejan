@@ -1,6 +1,6 @@
 {
   "name": "downloadmorejan",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Source code for Download More Jan website (http://downloadmorejan.xyz/)",
   "scripts": {
     "build": "gulp"
