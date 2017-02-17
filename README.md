@@ -1,6 +1,6 @@
 # Download More Jan
 
-This repo contains the source code and static resources required for building the Download More Jan website (currently at http://downloadmorejan.com/).
+This repo contains the source code and static resources required for building the Download More Jan website.
 
 HTML source is written in [Pug](http://jade-lang.com/) (formerly Jade). CSS source is written in [Stylus](http://stylus-lang.com/). Javascript files are written using ES2015 features and the CommonJS module system.
 
