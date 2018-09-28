@@ -34,5 +34,3 @@ If you'd like to make a change or improvement, open an issue for discussion. Pul
 ## License
 
 MIT
-
-&copy; 2018
