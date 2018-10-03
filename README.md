@@ -23,7 +23,7 @@ Alternatively, you can compile each of the source types using their respective b
 
 ## Deployment
 
-Once built, the contents of the `build` and `static` directories contain all of the resources needed to deploy the website. All files can be served staticly.
+Once built, the contents of the `build` and `static` directories contain all of the resources needed to deploy the website. All files can be served statically.
 
 The latest build can be downloaded, extracted and deployed as-is. Go to [the latest release](http://github.com/conelton/downloadmorejan/releases/latest) and download `downloadmorejan-<version>.tar.gz`.
 
